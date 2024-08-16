@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Plantians</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        /* border: 1px solid; */
+      }
+      @media (min-width: 360px) and (max-width: 740px) {
+        .navbar {
+          position: relative;
+        }
+        .logo {
+          position: absolute;
+          top: 5px;
+          z-index: 1;
+        }
+        .navbar ul {
+          display: flex;
+          flex-direction: column;
+          background: #000000bc;
+          position: absolute;
+          top: 0px;
+          left: 0px;
+          width: 345px;
+          height: auto;
+          padding: 80px 50px;
+          border-radius: 0 0 10px 10px;
+          z-index: 0;
+          display: none;
+        }
+        .navbar ul li a {
+          font-size: 0.9rem;
+        }
+        .logo {
+          width: 100px;
+        }
+        .login {
+          position: absolute;
+          top: 330px;
+          left: -150px;
+          display: none;
+        }
+
+        .colapse-btn {
+          position: absolute;
+          top: 5px;
+          right: 0;
+        }
+        .colapse-btn .show {
+          display: flex;
+        }
+
+        .colapse-btn .close {
+          display: none;
+        }
+
+        .motto {
+          padding-top: 40%;
+        }
+
+        .motto p {
+          text-align: center;
+          display: inline-flex;
+          flex-direction: column;
+          font-size: 1.5rem;
+        }
+        .get-involved {
+          font-size: 0.8rem;
+        }
+        .cards-group {
+          flex-wrap: wrap;
+          gap: 0.5rem;
+          margin-top: 75px;
+        }
+
+        .card {
+          width: 90%;
+          height: 120px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <navigation class="navbar">
+        <div class="logo"></div>
+        <ul class="nav-ul">
+          <li class="navlink"><a href="#">About Us</a></li>
+          <li class="navlink"><a href="#">Our Work</a></li>
+          <li class="navlink"><a href="#">Events</a></li>
+          <li class="navlink"><a href="#">Blog</a></li>
+          <li class="navlink"><a href="#">Get Involved</a></li>
+          <li class="navlink"><a href="#">Contact</a></li>
+        </ul>
+        <div class="colapse-btn">
+          <div class="login">
+            <a href="#">Login</a>
+          </div>
+          <img
+            src="plants/1-removebg-preview.png"
+            class="show"
+            alt="colapse-tree"
+          />
+          <img
+            src="plants/2-removebg-preview.png"
+            class="close"
+            alt="colapse-tree"
+          />
+        </div>
+      </navigation>
+      <div class="motto">
+        <p>Rooting for a <span>Greener Future</span></p>
+        <div class="get-involved">GET INVOLVED</div>
+      </div>
+      <div class="cards-group">
+        <div class="card">
+          <div class="card-img one">
+            <div class="text">
+              <div class="card-title">Outdoor Planting</div>
+              <div class="card-btn">Read More</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-img two">
+            <div class="text">
+              <div class="card-title">Sustainable Planting</div>
+              <div class="card-btn">Read More</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-img three">
+            <div class="text">
+              <div class="card-title">Indoor Planting</div>
+              <div class="card-btn">Read More</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <script>
+      const navUl = document.querySelector(".nav-ul");
+      const showBtn = document.querySelector(".show");
+      const clocseBtn = document.querySelector(".close");
+      const login = document.querySelector(".login");
+
+      showBtn.addEventListener("click", () => {
+        showBtn.style.display = "none";
+        clocseBtn.style.display = "flex";
+        navUl.style.display = "flex";
+        login.style.display = "flex";
+      });
+
+      clocseBtn.addEventListener("click", () => {
+        clocseBtn.style.display = "none";
+        showBtn.style.display = "flex";
+        navUl.style.display = "none";
+        login.style.display = "none";
+      });
+    </script>
+  </body>
+</html>
